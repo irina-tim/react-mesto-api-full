@@ -1,0 +1,19 @@
+.popup-info__container {
+  width: 430px;
+  height: 330px;
+  background-color: white;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+@media screen and (max-width: 600px) {
+  .popup-info__container {
+    width: 280px;
+    height: 308px;
+  }
+}

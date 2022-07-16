@@ -1,0 +1,12 @@
+.sign__paragraph {
+  font: 400 14px/17px "Inter", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  margin: 15px 0 0;
+}
+
+@media screen and (max-width: 600px) {
+  .sign__paragraph {
+    margin-top: 20px;
+  }
+}

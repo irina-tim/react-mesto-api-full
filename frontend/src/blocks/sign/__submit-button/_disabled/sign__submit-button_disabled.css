@@ -1,0 +1,10 @@
+.sign__submit-button_disabled {  
+  background-color: white;
+  color:#cccccc;
+}
+
+.sign__submit-button_disabled:hover {  
+    background-color: white;
+    color:#cccccc;
+    opacity: 1;
+  }

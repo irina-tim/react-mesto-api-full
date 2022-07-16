@@ -1,0 +1,9 @@
+.header__user {
+  color: white;
+  font: 500 18px/22px "Inter", Arial, sans-serif;
+  margin: 0;
+}
+
+@media screen and (max-width: 700px) { 
+    .header__user {}
+}

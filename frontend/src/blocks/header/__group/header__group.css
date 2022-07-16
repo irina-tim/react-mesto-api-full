@@ -1,0 +1,32 @@
+.header__group {
+  display: flex;
+  gap: 24px;
+}
+
+@media screen and (max-width: 700px) { 
+  .header__group {
+    margin-right: 27px;
+  }
+}
+
+@media screen and (max-width: 600px) { 
+  .header__group {
+    gap: 0px;
+    align-items: center;
+    margin: 0;
+  }
+
+  .header__group:first-of-type {
+    border-top: 1px solid rgba(84, 84, 84, 0.7);
+    padding-top: 27px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .header__group:last-of-type {
+    flex-direction: column;
+    gap: 18px;
+    margin: 0;
+    margin: 40px 0;
+  }
+}
