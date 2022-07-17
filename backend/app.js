@@ -20,21 +20,21 @@ const options = {
   origin: [
     'http://localhost:3000',
     'http://localhost:3001',
-    'http://tia.students.nomoredomains.xyz/',
-    'https://tia.students.nomoredomains.xyz/',
+    'http://tia.students.nomoredomains.xyz',
+    'https://tia.students.nomoredomains.xyz',
   ],
   credentials: true,
 };
 
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
+app.use(requestLogger);
 app.use('*', cors(options));
+// app.options('*', cors(options));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(helmet());
-
-app.use(requestLogger);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
