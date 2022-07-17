@@ -4,7 +4,7 @@ const User = require('../models/user');
 const NotFoundError = require('../errors/NotFoundError');
 const BadRequestError = require('../errors/BadRequestError');
 const ConflictError = require('../errors/ConflictError');
-const UnauthorizedError = require('../errors/UnauthorizedError');
+const { secret } = require('../utils/jwt');
 
 const getUsers = (req, res, next) => {
   User.find({})
@@ -38,7 +38,7 @@ const getUserInfo = (req, res, next) => {
   User.findById(_id)
     .then((user) => {
       if (!user) {
-        throw new UnauthorizedError('Запрашиваемый пользователь не найден');
+        throw new NotFoundError('Запрашиваемый пользователь не найден');
       }
       res.send({
         data: user,
@@ -125,7 +125,7 @@ const login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        process.env.JWT_SECRET,
+        secret,
         { expiresIn: '7d' },
       );
       res.send({ token });
